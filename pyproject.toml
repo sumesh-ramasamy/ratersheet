@@ -1,0 +1,75 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "ratersheet"
+dynamic = ["version"]
+description = "Blinded, balanced rating sheets for human evaluation of AI-generated text: assignment, a committed unblinding key, validated returns, and a methods paragraph."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Sumesh Bharathi Ramasamy" }]
+keywords = [
+    "human evaluation",
+    "blinding",
+    "inter-rater",
+    "rating study",
+    "large language models",
+    "research methods",
+    "reproducibility",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Scientific/Engineering",
+    "Typing :: Typed",
+]
+dependencies = [
+    "openpyxl>=3.1",
+    "defusedxml>=0.7",
+]
+
+[project.urls]
+Homepage = "https://github.com/sumesh-ramasamy/ratersheet"
+Repository = "https://github.com/sumesh-ramasamy/ratersheet"
+Issues = "https://github.com/sumesh-ramasamy/ratersheet/issues"
+Changelog = "https://github.com/sumesh-ramasamy/ratersheet/blob/main/CHANGELOG.md"
+
+[project.scripts]
+ratersheet = "ratersheet.cli:main"
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+[tool.hatch.version]
+path = "src/ratersheet/__init__.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/ratersheet"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "src",
+    "tests",
+    "examples",
+    "README.md",
+    "DESIGN.md",
+    "CHANGELOG.md",
+    "CONTRIBUTING.md",
+    "CITATION.cff",
+    "LICENSE",
+    "pyproject.toml",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"

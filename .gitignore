@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Editors and OS
+.DS_Store
+.idea/
+.vscode/
+
+# ratersheet study outputs: these can contain an unblinding key and study data.
+# Never commit them to a repository that raters can read.
+ratersheet-out/
+demo-out/
+**/private/key.json
+~$*.xlsx
