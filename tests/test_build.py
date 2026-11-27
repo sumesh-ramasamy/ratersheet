@@ -434,7 +434,7 @@ def test_build_refuses_to_replace_any_existing_file_without_overwrite(tmp_path: 
     message = str(excinfo.value)
     assert str(out / existing) in message, "the message names the file that is in the way"
     assert "overwrite" in message
-    assert sorted(str(p.relative_to(out)) for p in out.rglob("*") if p.is_file()) == sorted(
+    assert sorted(p.relative_to(out).as_posix() for p in out.rglob("*") if p.is_file()) == sorted(
         [existing, "notes.txt"]
     ), "a refused build must not create or delete anything"
     assert (out / existing).read_bytes() == b"precious"
