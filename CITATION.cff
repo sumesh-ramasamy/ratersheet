@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it using the metadata below."
+title: ratersheet
+abstract: "ratersheet builds blinded rating spreadsheets for human raters, keeps a verifiable unblinding key, validates returned sheets and writes a methods paragraph that states only what the tool did."
+authors:
+  - family-names: "Ramasamy"
+    given-names: "Sumesh Bharathi"
+version: 0.1.0
+date-released: 2026-11-27
+license: MIT
+repository-code: "https://github.com/sumesh-ramasamy/ratersheet"
+type: software
+keywords:
+  - blinded evaluation
+  - human rating
+  - inter-rater reliability
+  - spreadsheet
+  - research software
