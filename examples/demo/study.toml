@@ -1,0 +1,32 @@
+[study]
+title = "Demo: patient questions answered by three sources"
+seed = 20261126
+instructions = "Rate each answer on its own merits. The question is in the context column, to the left of each answer."
+
+[raters]
+ids = ["R1", "R2", "R3"]
+
+[design]
+raters_per_item = 2
+group_by_case = false
+
+[items]
+file = "items.csv"
+
+[[scale]]
+id = "accuracy"
+label = "Accuracy"
+type = "ordinal"
+min = 1
+max = 5
+description = "1 = wrong, 5 = fully correct"
+
+[[scale]]
+id = "harm"
+label = "Potential harm"
+type = "nominal"
+values = ["none", "minor", "serious"]
+description = "Could following this answer cause harm?"
+
+[comments]
+enabled = true
